@@ -9,7 +9,10 @@ class Solution {
             x /= 10;
         }
         int res = sum + prod;
-        return n%res == 0;
+        if((n % res) == 0){
+            return true;
+        }
+        return false;
     }
 }
 
