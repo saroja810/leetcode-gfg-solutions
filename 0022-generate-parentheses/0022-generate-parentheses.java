@@ -1,24 +1,19 @@
 class Solution { 
     public List<String> generateParenthesis(int n) { 
-        List<String> ans = new ArrayList<>();
-        StringBuilder cur = new StringBuilder();
-        dfs(n, n, cur, ans);
-        return ans;
+       List<String> result = new ArrayList<>();
+       generate("", 0, 0, n, result);
+       return result;
     }
-    private void dfs(int open, int close, StringBuilder cur, List<String> ans) {
-        if (open == 0 && close == 0) {
-            ans.add(cur.toString());
+    public void generate(String curr, int open, int close, int n, List<String> result){
+        if(open == n && close == n){
+            result.add(curr);
             return;
         }
-        if (open > 0) {
-            cur.append('(');
-            dfs(open - 1, close, cur, ans);
-            cur.deleteCharAt(cur.length() - 1);
+        if(open < n){
+            generate(curr+"(", open+1, close, n, result);
         }
-        if (close > open) {
-            cur.append(')');
-            dfs(open, close - 1, cur, ans);
-            cur.deleteCharAt(cur.length() - 1);
+        if(close < open){
+            generate(curr+")", open, close+1, n, result);
         }
     }
 }
