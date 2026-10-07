@@ -4,19 +4,18 @@ class Solution {
         return solve(arr, k, n) - solve(arr, k-1, n);
     }
     static int solve(int[] arr, int k, int n){
-        int i = 0, j = 0, odds = 0, ans = 0;
-        while(i < n){
-            if(arr[i] % 2 == 1){
+        int i = 0, odds = 0, ans = 0;
+        for(int j = 0; j < n; j++){
+            if(arr[j] % 2 == 1){
                 odds ++;
             }
             while(odds > k){
-                if(arr[j] % 2 == 1){
+                if(arr[i] % 2 == 1){
                     odds --;
                 }
-                j++;
+                i++;
             }
-            ans += (i-j+1);
-            i++;
+            ans += (j-i+1);
         }
         return ans;
     }
