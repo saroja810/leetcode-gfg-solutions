@@ -1,0 +1,6 @@
+# [Roll Characters of String](https://www.geeksforgeeks.org/problems/roll-the-characters-of-a-string2127/1)
+## Medium
+Given a string s consisting of lowercase English letters and an integer array roll[], perform a sequence of roll operations on the string. For each value roll[i], increment each of the first roll[i] characters of the string by 1 in the English alphabet. After 'z', the character wraps around to 'a'.Return the final string after applying all roll operations.Note: A roll operation affects the current state of the string, including all previous modifications.Examples:Input: s = "bca", roll[] = [1, 2, 3]
+Output: eeb
+Explanation: Initially, s = "bca" roll[0] = 1: Roll the first 1 character. "bca" -&gt; "cca" roll[1] = 2: Roll the first 2 characters. "cca"-&gt; "dda" roll[2] = 3: Roll the first 3 characters. "dda" -&gt; "eeb" After applying all the roll operations, the final string is "eeb".Input: s = "zcza", roll[] = [1, 1, 3, 4]
+Output: debbExplanation: Initially, s = "zcza". Roll first 1 character: "zcza" -&gt; "acza" Roll first 1 character again: "acza" -&gt; "bcza" Roll first 3 characters: "bcza" -&gt; "cdaa" Roll first 4 characters: "cdaa" -&gt; "debb" Therefore, the final string is "debb".
